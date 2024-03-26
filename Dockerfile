@@ -1,6 +1,6 @@
-FROM ubuntu:latest
+FROM alpine:latest
 
-RUN apt update -y && apt install -y build-essential cmake qt6-base-dev
+RUN apk add --upgrade qt6-qtbase-dev g++ make cmake
 COPY /echoserver /app
 WORKDIR /app
 RUN cmake . && make
